@@ -12,6 +12,7 @@ const useStyles = createUseStyles({
         margin: 16,
     },
     title: {
+        marginLeft: 24,
         marginTop: 36,
         position: "absolute",
     },

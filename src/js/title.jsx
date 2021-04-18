@@ -2,7 +2,9 @@ import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
     titleText: {
-        fontSize: 60
+        fontFamily: "Work Sans, Helvetica Neue, sans-serif",
+        fontSize: 64,
+        fontWeight: 'bold',
     },
 });
 
