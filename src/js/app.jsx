@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import Title from "./title.jsx";
 import BodyContent from "./bodycontent.jsx";
-import IconRow from "./iconcontainer.jsx";
+import IconSection from "./iconcontainer.jsx";
 
 import { createUseStyles } from "react-jss";
 
@@ -29,7 +29,7 @@ function App() {
             <div className={styles.title}>
                 {" "}
                 <Title value="Dorothy Chen" />
-                <IconRow />
+                <IconSection />
             </div>
             <div className={styles.bodyContent}>
                 <BodyContent />
