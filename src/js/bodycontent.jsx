@@ -6,49 +6,59 @@ const useStyles = createUseStyles({
         marginLeft: 26,
         height: "100%",
         flexDirection: "row-reverse",
-        justifyContent: "space-around",
+        justifyContent: "flex-start",
     },
     imageWrapper: {
         minWidth: 200,
-        padding: 20,
+        width: 260,
+        padding: 12,
         overflow: "hidden",
         height: "75vh",
     },
-    img: {
+    img: (color) => ({
         width: "100%",
         height: "100%",
         objectFit: "cover",
-    },
+        background: color,
+    }),
     "@media screen and (max-width: 850px)": {
         container: {
             flexDirection: "column",
         },
         imageWrapper: {
             height: 170,
+            width: '100%',
         },
     },
 });
 
-function BodyImage({src_url}) {
-    const styles = useStyles();
+function BodyImage({ color }) {
+    const styles = useStyles(color);
 
     return (
         <div className={styles.imageWrapper}>
-            <img className={styles.img} src={src_url} />
+            <div className={styles.img} />
         </div>
     );
 }
 
+function getColor(r, g, b) {
+    return "rgb(" + r + "," + g + "," + b + ")";
+}
+
 export default function BodyContent(props) {
     const styles = useStyles();
-    const url = "//im.vsco.co/aws-us-west-2/46833b/32012341/5f9bb2f23bf8a166032602f5/vsco5f9bb2f3416ad.jpg?w=847&dpr=1";
+
+    const r = Math.ceil(Math.random() * 255);
+    const g = Math.ceil(Math.random() * 255);
+    const b = Math.ceil(Math.random() * 255);
 
     return (
         <div className={styles.container}>
-            <BodyImage src_url={url} />
-            <BodyImage src_url={url} />
-            <BodyImage src_url={url} />
-            <BodyImage src_url={url} />
+            <BodyImage color={getColor(r, g, b)} />
+            <BodyImage color={getColor(r + 15, g + 15, b + 15)} />
+            <BodyImage color={getColor(r + 30, g + 30, b + 30)} />
+            <BodyImage color={getColor(r + 45, g + 45, b + 45)} />
         </div>
     );
 }
