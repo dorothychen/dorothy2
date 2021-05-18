@@ -49,9 +49,9 @@ function getColor(r, g, b) {
 export default function BodyContent(props) {
     const styles = useStyles();
 
-    const r = Math.ceil(Math.random() * 255);
-    const g = Math.ceil(Math.random() * 255);
-    const b = Math.ceil(Math.random() * 255);
+    const r = 255;
+    const g = 89;
+    const b = 94;
 
     return (
         <div className={styles.container}>
